@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk - UncleBulls Coffee Beans</title>
+    <link rel="stylesheet" href="Toko.Online.css">
+</head>
+<body>
+
+    <header>
+        <h1>☕ UncleBulls Coffee Beans</h1>
+        <p>Biji Kopi Premium, Fresh Roasted, Siap Kirim Setiap Hari</p>
+        <nav>
+            <a href="Toko.Online.html">Home</a> | <a href="products.html">Produk</a>
+        </nav>
+    </header>
+
+    <section class="cart-section">
+        <div class="cart-icon" onclick="openCart()">
+            🛒 <span id="cart-count">0</span>
+        </div>
+    </section>
+
+    <section class="products">
+        <h2>Produk Kami</h2>
+
+        <div class="product-card">
+            <img src="arabica toraja.jpg" alt="Biji Kopi Arabica toraja Premium">
+            <h3>Arabica toraja Premium</h3>
+            <p>250gr – Rp 55.000</p>
+            <button onclick="addToCart('Arabica toraja Premium', 75000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('Arabica toraja Premium', 75000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="honey.jpg" alt="Biji Kopi kintamani honey ">
+            <h3>kintamani honey </h3>
+            <p>250gr – Rp 57.000</p>
+            <button onclick="addToCart('kintamani honey', 60000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('kintamani honey', 60000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="puntang wine.jpg" alt="puntang wine UncleBulls">
+            <h3>puntang wine</h3>
+            <p>250gr – Rp 50.000</p>
+            <button onclick="addToCart('puntang wine', 85000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('puntang wine', 85000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="malabar.jpg" alt="malabar arabica UncleBulls">
+            <h3>malabar arabica</h3>
+            <p>250gr – Rp 55.000</p>
+            <button onclick="addToCart('malabar arabica', 75000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('malabar arabica', 75000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="peaberry.jpg" alt="toraja peaberry UncleBulls">
+            <h3>toraja peaberry</h3>
+            <p>250gr – Rp 55.000</p>
+            <button onclick="addToCart('toraja peaberry', 95000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('toraja peaberry', 95000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="ciwiday.jpg" alt="arabica ciwiday UncleBulls">
+            <h3>arabica ciwiday</h3>
+            <p>250gr – Rp 40.000</p>
+            <button onclick="addToCart('arabica ciwiday', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('arabica ciwiday', 100000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="papua wamena.jpg" alt=" arabica papua UncleBulls">
+            <h3>papua wamena</h3>
+            <p>250gr – Rp 55.000</p>
+            <button onclick="addToCart('arabica wamena', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('arabica wamena', 100000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="TAMBORA.jpg" alt="arabica tambora UncleBulls">
+            <h3>arabica tambora</h3>
+            <p>250gr – Rp 40.000</p>
+            <button onclick="addToCart('arabica TAMBORA', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('arabica TAMBORA', 100000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="sidikalang.jpg" alt="arabica sidikalang UncleBulls">
+            <h3>arabica sidikalang</h3>
+            <p>250gr – Rp 100.000</p>
+            <button onclick="addToCart('sidikalang', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('sidikalang', 100000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="malabar.jpg" alt="malabar UncleBulls">
+            <h3>malabar</h3>
+            <p>250gr – Rp 55.000</p>
+            <button onclick="addToCart('malabar', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('malabar', 100000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="ule karang.jpg" alt="ule karang UncleBulls">
+            <h3>ule karang</h3>
+            <p>250gr – Rp 55.000</p>
+            <button onclick="addToCart('ule karang', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('ule karang', 100000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="takengon.jpg" alt="takengon UncleBulls">
+            <h3>takengon</h3>
+            <p>250gr – Rp 57.000</p>
+            <button onclick="addToCart('takengon', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('takengon', 100000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="mandailing.jpg" alt="mandailing UncleBulls">
+            <h3>mandailing</h3>
+            <p>250gr – Rp 45.000</p>
+            <button onclick="addToCart('mandailing', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('mandailing', 100000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="lintong.jpg" alt="lintong UncleBulls">
+            <h3>lintong</h3>
+            <p>250gr – Rp 55.000</p>
+            <button onclick="addToCart('lintong', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('lintong', 100000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="luak.jpg" alt="luak UncleBulls">
+            <h3>luak</h3>
+            <p>250gr – Rp 50.000</p>
+            <button onclick="addToCart('luak', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('luak', 100000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="liberica lampung.jpg" alt="liberica lampung UncleBulls">
+            <h3>liberica</h3>
+            <p>250gr – Rp 50.000</p>
+            <button onclick="addToCart('liberica', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('liberica', 100000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="kalosi toraja.jpg" alt="kalosi toraja UncleBulls">
+            <h3>kalosi</h3>
+            <p>250gr – Rp 100.000</p>
+            <button onclick="addToCart('kalosi', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('kalosi', 100000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="kerinci.jpg" alt="kerinci UncleBulls">
+            <h3>kerinci</h3>
+            <p>250gr – Rp 58.000</p>
+            <button onclick="addToCart('kerinci', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('kerinci', 100000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="java preanger.jpg" alt="java preanger UncleBulls">
+            <h3>java preanger</h3>
+            <p>250gr – Rp 48.000</p>
+            <button onclick="addToCart('java preanger', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('java preanger', 100000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="excelsa.jpg" alt="excelsa UncleBulls">
+            <h3>excelsa</h3>
+            <p>250gr – Rp 45.000</p>
+            <button onclick="addToCart('excelsa', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('excelsa', 100000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="flores bajawa.jpg" alt="flores bajawa UncleBulls">
+            <h3>flores bajawa</h3>
+            <p>250gr – Rp 45.000</p>
+            <button onclick="addToCart('bajawa', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('bajawa', 100000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="bengkulu.jpg" alt="bengkulu UncleBulls">
+            <h3>bengkulu</h3>
+            <p>300gr – Rp 45.000</p>
+            <button onclick="addToCart('bengkulu', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('bengkulu', 100000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="alexander.jpg" alt="alexander UncleBulls">
+            <h3>alexander</h3>
+            <p>3000gr – Rp 45.000</p>
+            <button onclick="addToCart('alexander', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('alexander', 100000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="robusta.jpg" alt="Robusta UncleBulls">
+            <h3>Robusta</h3>
+            <p>300gr – Rp 36.000</p>
+            <button onclick="addToCart('Robusta', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('Robusta', 100000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="bali kitamani.jpg" alt="Bali Kitamani UncleBulls">
+            <h3>Bali Kitamani</h3>
+            <p>300gr – Rp 57.000</p>
+            <button onclick="addToCart('Bali Kitamani', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('Bali Kitamani', 100000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="arabica toraja.jpg" alt="Arabica Toraja UncleBulls">
+            <h3>Arabica Toraja</h3>
+            <p>300gr – Rp 66.000</p>
+            <button onclick="addToCart('Arabica Toraja', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('Arabica Toraja', 100000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="arabica.jpg" alt="Original Arabica  UncleBulls">
+            <h3>Original Arabica  </h3>
+            <p>300gr – Rp 51.000</p>
+            <button onclick="addToCart('Original Arabica', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('Original Arabica', 100000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="aceh gayo.jpg" alt="Aceh Gayo UncleBulls">
+            <h3>Aceh Gayo</h3>
+            <p>300gr – Rp 51.000</p>
+            <button onclick="addToCart('Aceh Gayo', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('Aceh Gayo', 100000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="temanggung.jpg" alt="Temanggung UncleBulls">
+            <h3> Robuta Temanggung</h3>
+            <p>300gr – Rp 48.000</p>
+            <button onclick="addToCart('Robuta Temanggung', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('Robuta Temanggung', 100000)">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="lampung.jpg" alt="Robusta lampung UncleBulls">
+            <h3>Robusta lampung</h3>
+            <p>300gr – Rp 42.000</p>
+            <button onclick="addToCart('Robusta lampung', 100000)">Tambah ke Keranjang</button>
+            <button onclick="buyNow('Robusta lampung', 100000)">Beli Sekarang</button>
+        </div>
+    </section>
+
+    <div id="cartModal" class="form-container">
+        <div class="form-box">
+            <h2>Keranjang Belanja</h2>
+            <div id="cartItems"></div>
+            <div id="cartTotal">Total: Rp 0</div>
+            <button onclick="checkout()">Checkout</button>
+            <button type="button" class="close-btn" onclick="closeCart()">Tutup</button>
+        </div>
+    </div>
+
+    <div id="orderForm" class="form-container">
+        <div class="form-box">
+            <h2>Form Pemesanan</h2>
+
+            <form>
+                <label>Produk</label>
+                <input type="text" id="productName" readonly>
+
+                <label>Nama Lengkap</label>
+                <input type="text" placeholder="Masukkan nama Anda">
+
+                <label>No WA</label>
+                <input type="text" placeholder="08xxxxxxxxxx">
+
+                <label>Alamat Lengkap</label>
+                <textarea placeholder="Tulis alamat pengiriman"></textarea>
+
+                <button type="submit">Kirim Pesanan</button>
+                <button type="button" class="close-btn" onclick="closeForm()">Batal</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+        let cartCount = 0;
+
+        function addToCart(product, price) {
+            // Find the product card
+            const productCards = document.querySelectorAll('.product-card');
+            let currentProduct = product;
+            let currentPrice = price;
+            productCards.forEach(card => {
+                const h3 = card.querySelector('h3');
+                if (h3.textContent === product) {
+                    const select = card.querySelector('select');
+                    const span = card.querySelector('#price-display');
+                    if (select && span) {
+                        const weight = select.value;
+                        const priceText = span.textContent.replace('Rp ', '').replace(/\./g, '');
+                        currentPrice = parseInt(priceText);
+                        currentProduct = `${product} ${weight}gr`;
+                    }
+                }
+            });
+            cart.push({ product: currentProduct, price: currentPrice });
+            cartCount++;
+            document.getElementById('cart-count').innerText = cartCount;
+            alert(`${currentProduct} telah ditambahkan ke keranjang!`);
+        }
+
+        function openCart() {
+            document.getElementById('cartModal').style.display = "flex";
+            updateCartDisplay();
+        }
+
+        function closeCart() {
+            document.getElementById('cartModal').style.display = "none";
+        }
+
+        function updateCartDisplay() {
+            let cartItemsDiv = document.getElementById('cartItems');
+            let cartTotalDiv = document.getElementById('cartTotal');
+            if (cart.length === 0) {
+                cartItemsDiv.innerHTML = '<p>Keranjang kosong</p>';
+                cartTotalDiv.innerText = 'Total: Rp 0';
+            } else {
+                let itemsHTML = cart.map((item, index) => `
+                    <div class="cart-item">
+                        <span>${item.product} - Rp ${item.price}</span>
+                        <button onclick="removeFromCart(${index})">Hapus</button>
+                    </div>
+                `).join('');
+                cartItemsDiv.innerHTML = itemsHTML;
+                let total = cart.reduce((sum, item) => sum + item.price, 0);
+                cartTotalDiv.innerText = `Total: Rp ${total}`;
+            }
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            cartCount--;
+            document.getElementById('cart-count').innerText = cartCount;
+            updateCartDisplay();
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Keranjang kosong!');
+                return;
+            }
+            let cartItems = cart.map(item => item.product).join(', ');
+            document.getElementById('productName').value = cartItems;
+            closeCart();
+            openForm(cartItems);
+        }
+
+        function openForm(product) {
+            document.getElementById('orderForm').style.display = "flex";
+            document.getElementById('productName').value = product;
+        }
+        function closeForm() {
+            document.getElementById('orderForm').style.display = "none";
+        }
+
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const product = document.getElementById('productName').value;
+            const name = document.querySelector('#orderForm input[placeholder="Masukkan nama Anda"]').value;
+            const phone = document.querySelector('#orderForm input[placeholder="08xxxxxxxxxx"]').value;
+            const address = document.querySelector('#orderForm textarea').value;
+            const text = encodeURIComponent(`Halo ka, aku mau pesen ${product}. Nama: ${name}, No WA: ${phone}, Alamat: ${address}`);
+            const url = `https://api.whatsapp.com/send?phone=6285890934922&text=${text}`;
+            window.open(url);
+            closeForm();
+        });
+
+        function buyNow(product, price) {
+            // Find the product card
+            const productCards = document.querySelectorAll('.product-card');
+            let currentProduct = product;
+            let currentPrice = price;
+            productCards.forEach(card => {
+                const h3 = card.querySelector('h3');
+                if (h3.textContent === product) {
+                    const select = card.querySelector('select');
+                    const span = card.querySelector('#price-display');
+                    if (select && span) {
+                        const weight = select.value;
+                        const priceText = span.textContent.replace('Rp ', '').replace(/\./g, '');
+                        currentPrice = parseInt(priceText);
+                        currentProduct = `${product} ${weight}gr`;
+                    }
+                }
+            });
+            let text = encodeURIComponent(`Halo ka, aku mau pesen ${currentProduct} seharga Rp ${currentPrice}`);
+            let url = `https://api.whatsapp.com/send?phone=6285890934922&text=${text}`;
+            window.open(url);
+        }
+
+        function initializeProducts() {
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(card => {
+                const p = card.querySelector('p');
+                const text = p.textContent;
+                const match = text.match(/(\d+)gr – Rp ([\d.]+)/);
+                if (match) {
+                    const weight = parseInt(match[1]);
+                    const priceStr = match[2].replace(/\./g, '');
+                    const price = parseInt(priceStr);
+                    const perGram = price / weight;
+                    const select = document.createElement('select');
+                    select.onchange = () => updatePrice(select, perGram);
+                    const options = [100, 200, 250, 500, 1000];
+                    options.forEach(w => {
+                        const option = document.createElement('option');
+                        option.value = w;
+                        option.textContent = `${w}gr`;
+                        if (w === weight) option.selected = true;
+                        select.appendChild(option);
+                    });
+                    const span = document.createElement('span');
+                    span.id = 'price-display';
+                    span.textContent = `Rp ${(perGram * weight).toLocaleString('id-ID')}`;
+                    p.replaceWith(select, ' – ', span);
+                }
+            });
+        }
+
+        function updatePrice(select, perGram) {
+            const weight = parseInt(select.value);
+            const price = perGram * weight;
+            const span = select.nextElementSibling;
+            if (span && span.id === 'price-display') {
+                span.textContent = `Rp ${price.toLocaleString('id-ID')}`;
+            }
+        }
+
+        initializeProducts();
+    </script>
+
+</body>
+</html>

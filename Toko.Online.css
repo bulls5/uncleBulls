@@ -1,0 +1,213 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #db0d0d;
+}
+
+header {
+    text-align: left;
+    background: #5507e6;
+    color: rgb(255, 255, 255);
+    padding: 50px 30px;
+
+    background-image: url('bens.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(243, 3, 3, 0.3);
+    position: relative;
+
+}
+
+.products {
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.products h2 {
+    font-size: 28px;
+    color: #fcfafa;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.product-card {
+    flex: 0 0 calc(25% - 20px);
+    min-width: 240px;
+    background: rgb(238, 12, 12);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #70452a;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #5b3723;
+}
+
+/* POPUP FORM */
+.form-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white(250, 247, 247, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.form-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 350px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #b49c8a;
+    border-radius: 8px;
+}
+
+.close-btn {
+    background: #777 !important;
+    margin-top: 5px;
+}
+
+/* NAVIGATION */
+nav {
+    position: absolute;
+    top: 20px;
+    right: 100px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 15px;
+    border-radius: 25px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+nav a {
+    color: #5507e6;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #70452a;
+}
+
+/* CART ICON */
+.cart-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.cart-icon:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+/* CART MODAL */
+#cartModal .form-box {
+    width: 400px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+#cartItems {
+    margin: 20px 0;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item span {
+    flex: 1;
+}
+
+.cart-item button {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.cart-item button:hover {
+    background: #c82333;
+}
+
+#cartTotal {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 20px 0;
+    text-align: right;
+}
+
+/* CART SECTION BELOW HOME/PRODUCTS – FIXED */
+.cart-section {
+    position: absolute;      /* supaya bisa nempel di kanan atas */
+    top: 65px;               /* jarak dari atas */
+    right: 20px;             /* jarak dari kanan */
+    z-index: 999;            /* supaya tidak ketutup elemen lain */
+    padding: 0;
+    margin: 0;
+}
+
+/* Ikon keranjang kecil */
+.cart-section .cart-icon {
+    position: relative;
+    font-size: 20px;         /* ukuran ikon (lebih kecil) */
+    cursor: pointer;
+
+    background: rgba(255, 255, 255, 0.8);
+    padding: 8px;            /* kecilkan lingkarannya */
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+.cart-section .cart-icon:hover {
+    background: rgb(105, 2, 2);
+}

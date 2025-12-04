@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UncleBulls Coffee Beans</title>
+    <link rel="stylesheet" href="Toko.Online.css">
+</head>
+<body>
+
+    <header>
+        <h1>☕ UncleBulls Coffee Beans</h1>
+        <p>Biji Kopi Premium, Fresh Roasted, Siap Kirim Setiap Hari</p>
+        <nav>
+            <a href="Toko.Online.html">Home</a> | <a href="products.html">Produk</a>
+        </nav>
+    </header>
+
+    <section class="home">
+        <h2>Selamat datang penikmat kopi di Toko UncleBulls</h2>
+        <div class="advantages">
+            <h3>Keunggulan Produk Kami:</h3>
+            <ul>
+                <li>Bahan 100% asli biji kopi tanpa campuran kimia</li>
+                <li>Dijamin 100% barang baru</li>
+                <li>Beragam varian beans kopi dari seluruh Indonesia</li>
+            </ul>
+        </div>
+        <p>Pilih beans kopi yang kamu suka.
+         Butuh semangat baru? Biarkan aroma kopi kami yang kuat membangunkan ide-ide terbaik Anda. Kopi asli, rasa yang tak tergantikan! Nikmati setiap tegukan kopi terbaik kami—dari biji pilihan, diracik dengan sepenuh hati. Bukan sekadar kopi, tapi cerita yang menenangkan hari Anda. Kami percaya kopi terbaik lahir dari alam. Dipetik langsung dari kebun pilihan, setiap biji menghadirkan cita rasa murni yang membuat Anda jatuh cinta pada seduhan pertama.</p>
+        <div class="color-selection">
+
+    </section>
+
+    <script>
+        let cart = [];
+        let cartCount = 0;
+
+        function addToCart(product, price) {
+            // Find the product card
+            const productCards = document.querySelectorAll('.product-card');
+            let currentProduct = product;
+            let currentPrice = price;
+            productCards.forEach(card => {
+                const h3 = card.querySelector('h3');
+                if (h3.textContent === product) {
+                    const select = card.querySelector('select');
+                    const span = card.querySelector('#price-display');
+                    if (select && span) {
+                        const weight = select.value;
+                        const priceText = span.textContent.replace('Rp ', '').replace(/\./g, '');
+                        currentPrice = parseInt(priceText);
+                        currentProduct = `${product} ${weight}gr`;
+                    }
+                }
+            });
+            cart.push({ product: currentProduct, price: currentPrice });
+            cartCount++;
+            document.getElementById('cart-count').innerText = cartCount;
+            alert(`${currentProduct} telah ditambahkan ke keranjang!`);
+        }
+
+        function openCart() {
+            document.getElementById('cartModal').style.display = "flex";
+            updateCartDisplay();
+        }
+
+        function closeCart() {
+            document.getElementById('cartModal').style.display = "none";
+        }
+
+        function updateCartDisplay() {
+            let cartItemsDiv = document.getElementById('cartItems');
+            let cartTotalDiv = document.getElementById('cartTotal');
+            if (cart.length === 0) {
+                cartItemsDiv.innerHTML = '<p>Keranjang kosong</p>';
+                cartTotalDiv.innerText = 'Total: Rp 0';
+            } else {
+                let itemsHTML = cart.map((item, index) => `
+                    <div class="cart-item">
+                        <span>${item.product} - Rp ${item.price}</span>
+                        <button onclick="removeFromCart(${index})">Hapus</button>
+                    </div>
+                `).join('');
+                cartItemsDiv.innerHTML = itemsHTML;
+                let total = cart.reduce((sum, item) => sum + item.price, 0);
+                cartTotalDiv.innerText = `Total: Rp ${total}`;
+            }
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            cartCount--;
+            document.getElementById('cart-count').innerText = cartCount;
+            updateCartDisplay();
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Keranjang kosong!');
+                return;
+            }
+            let cartItems = cart.map(item => item.product).join(', ');
+            document.getElementById('productName').value = cartItems;
+            closeCart();
+            openForm(cartItems);
+        }
+
+        function openForm(product) {
+            document.getElementById('orderForm').style.display = "flex";
+            document.getElementById('productName').value = product;
+        }
+        function closeForm() {
+            document.getElementById('orderForm').style.display = "none";
+        }
+
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const product = document.getElementById('productName').value;
+            const name = document.querySelector('#orderForm input[placeholder="Masukkan nama Anda"]').value;
+            const phone = document.querySelector('#orderForm input[placeholder="08xxxxxxxxxx"]').value;
+            const address = document.querySelector('#orderForm textarea').value;
+            const text = encodeURIComponent(`Halo ka, aku mau pesen ${product}. Nama: ${name}, No WA: ${phone}, Alamat: ${address}`);
+            const url = `https://api.whatsapp.com/send?phone=6285890934922&text=${text}`;
+            window.open(url);
+            closeForm();
+        });
+
+        function buyNow(product, price) {
+            // Find the product card
+            const productCards = document.querySelectorAll('.product-card');
+            let currentProduct = product;
+            let currentPrice = price;
+            productCards.forEach(card => {
+                const h3 = card.querySelector('h3');
+                if (h3.textContent === product) {
+                    const select = card.querySelector('select');
+                    const span = card.querySelector('#price-display');
+                    if (select && span) {
+                        const weight = select.value;
+                        const priceText = span.textContent.replace('Rp ', '').replace(/\./g, '');
+                        currentPrice = parseInt(priceText);
+                        currentProduct = `${product} ${weight}gr`;
+                    }
+                }
+            });
+            let text = encodeURIComponent(`Halo ka, aku mau pesen ${currentProduct} seharga Rp ${currentPrice}`);
+            let url = `https://api.whatsapp.com/send?phone=6285890934922&text=${text}`;
+            window.open(url);
+        }
+
+        function initializeProducts() {
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(card => {
+                const p = card.querySelector('p');
+                const text = p.textContent;
+                const match = text.match(/(\d+)gr – Rp ([\d.]+)/);
+                if (match) {
+                    const weight = parseInt(match[1]);
+                    const priceStr = match[2].replace(/\./g, '');
+                    const price = parseInt(priceStr);
+                    const perGram = price / weight;
+                    const select = document.createElement('select');
+                    select.onchange = () => updatePrice(select, perGram);
+                    const options = [100, 200, 250, 500, 1000];
+                    options.forEach(w => {
+                        const option = document.createElement('option');
+                        option.value = w;
+                        option.textContent = `${w}gr`;
+                        if (w === weight) option.selected = true;
+                        select.appendChild(option);
+                    });
+                    const span = document.createElement('span');
+                    span.id = 'price-display';
+                    span.textContent = `Rp ${(perGram * weight).toLocaleString('id-ID')}`;
+                    p.replaceWith(select, ' – ', span);
+                }
+            });
+        }
+
+        function updatePrice(select, perGram) {
+            const weight = parseInt(select.value);
+            const price = perGram * weight;
+            const span = select.nextElementSibling;
+            if (span && span.id === 'price-display') {
+                span.textContent = `Rp ${price.toLocaleString('id-ID')}`;
+            }
+        }
+
+        initializeProducts();
+        function buyNow(product, price) {
+            // Find the product card
+            const productCards = document.querySelectorAll('.product-card');
+            let currentProduct = product;
+            let currentPrice = price;
+            productCards.forEach(card => {
+                const h3 = card.querySelector('h3');
+                if (h3.textContent === product) {
+                    const select = card.querySelector('select');
+                    const span = card.querySelector('#price-display');
+                    if (select && span) {
+                        const weight = select.value;
+                        const priceText = span.textContent.replace('Rp ', '').replace(/\./g, '');
+                        currentPrice = parseInt(priceText);
+                        currentProduct = `${product} ${weight}gr`;
+                    }
+                }
+            });
+            let text = encodeURIComponent(`Halo ka, aku mau pesen ${currentProduct} seharga Rp ${currentPrice}`);
+            let url = `https://api.whatsapp.com/send?phone=6285890934922&text=${text}`;
+            window.open(url);
+        }
+
+        function initializeProducts() {
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(card => {
+                const p = card.querySelector('p');
+                const text = p.textContent;
+                const match = text.match(/(\d+)gr – Rp ([\d.]+)/);
+                if (match) {
+                    const weight = parseInt(match[1]);
+                    const priceStr = match[2].replace(/\./g, '');
+                    const price = parseInt(priceStr);
+                    const perGram = price / weight;
+                    const select = document.createElement('select');
+                    select.onchange = () => updatePrice(select, perGram);
+                    const options = [100, 200, 250, 500, 1000];
+                    options.forEach(w => {
+                        const option = document.createElement('option');
+                        option.value = w;
+                        option.textContent = `${w}gr`;
+                        if (w === weight) option.selected = true;
+                        select.appendChild(option);
+                    });
+                    const span = document.createElement('span');
+                    span.id = 'price-display';
+                    span.textContent = `Rp ${(perGram * weight).toLocaleString('id-ID')}`;
+                    p.replaceWith(select, ' – ', span);
+                }
+            });
+        }
+
+        function updatePrice(select, perGram) {
+            const weight = parseInt(select.value);
+            const price = perGram * weight;
+            const span = select.nextElementSibling;
+            if (span && span.id === 'price-display') {
+                span.textContent = `Rp ${price.toLocaleString('id-ID')}`;
+            }
+        }
+
+        initializeProducts();
+    </script>
+
+</body>
+</html>
